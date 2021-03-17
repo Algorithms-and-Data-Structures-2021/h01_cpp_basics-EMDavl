@@ -35,14 +35,17 @@ BookStore::BookStore(const std::string &name) : name_{name} {
     }
     name_ = name;
     storage_capacity_ = kInitStorageCapacity;
+    storage_size_ = 0;
     storage_ = new Book[storage_capacity_];
 }
 
 // 3. реализуйте деструктор ...
 BookStore::~BookStore() {
-    delete(storage_);
+    delete[] storage_;
     storage_ = nullptr;
-    name_ = nullptr;
+    name_.clear();
+    storage_size_ = 0;
+    storage_capacity_ = 0;
 
     // здесь мог бы быть ваш высвобождающий разум от негатива код ...
     // Tip 1: я свободен ..., словно память в куче: не забудьте обнулить указатель

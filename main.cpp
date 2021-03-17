@@ -12,5 +12,10 @@
 
 
 int main(int argc, char **argv) {
-  return 0;
+    const auto bs = new BookStore("BookStore");
+    std::cout<< bs->GetSize() << std::endl;
+    std::cout<< bs->GetCapacity() << std::endl;
+    std::cout<< bs->GetName() << std::endl;
+    std::cout<< bs->GetBooks() << std::endl;
+    return 0;
 }
