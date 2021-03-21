@@ -14,6 +14,7 @@ add_library(bookstore_lib
         src/book_store.cpp include/book_store.hpp)
 
 target_include_directories(bookstore_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_compile_options(bookstore_lib PUBLIC "-g;-Og")
 
 # executables
 add_executable(main main.cpp)
